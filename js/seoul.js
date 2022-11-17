@@ -68,14 +68,26 @@ function drawMap(target) {
             
             // console.log(states.selectAll('path'));
             var clickpath = states.selectAll('path');
-        
+            var dobonggu = states.selectAll('#path-Dobong-gu');
+            var yeongdeungpogu = states.selectAll('#path-Yeongdeungpo-gu');
+            console.log(dobonggu);
 
-            clickpath.on('click', (e) => {
-                console.log(e.properties.SIG_KOR_NM + '로 이동');
-                clickpath.attr('class', 'selected'); // 클래스 추가로 클릭 이벤트 발생 시 테두리 진해지게 함 -> 근데 다 진해짐... -> clickpath에서 특정 태그를 id통해서 추출 후 class 넣는 방식으로 시도 해 볼 예정
-                // console.log(e);
-                // e.properties.SIG_ENG_NM = e.properties.SIG_ENG_NM+'1'; // properties 변경으로 색 칠하기 시도 -> 실패
+            dobonggu.on('click', (e) => {
+                console.log('저 도봉구인데 왜 눌려요!');
+                dobonggu.attr('class', 'selected');
             })
+            yeongdeungpogu.on('click', (e) => {
+                console.log('저 영등포구인데 ㅎㅇ');
+                yeongdeungpogu.attr('class', 'selected');
+            })
+
+            // clickpath.on('click', (e) => {
+            //     console.log(e.properties.SIG_KOR_NM + '로 이동');
+            //     clickpath.attr('class', 'selected'); // 클래스 추가로 클릭 이벤트 발생 시 테두리 진해지게 함 -> 근데 다 진해짐... -> clickpath에서 특정 태그를 id통해서 추출 후 class 넣는 방식으로 시도 해 볼 예정
+                
+            //     // console.log(e);
+            //     // e.properties.SIG_ENG_NM = e.properties.SIG_ENG_NM+'1'; // properties 변경으로 색 칠하기 시도 -> 실패
+            // })
 
 
 
