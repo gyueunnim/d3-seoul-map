@@ -64,22 +64,78 @@ function drawMap(target) {
             
             // feature 통해서 배열 데이터 접근
             지도데이터 = json.features;
-            console.log(지도데이터);
+            // console.log(지도데이터);
             
-            // console.log(states.selectAll('path'));
-            var clickpath = states.selectAll('path');
-            var dobonggu = states.selectAll('#path-Dobong-gu');
-            var yeongdeungpogu = states.selectAll('#path-Yeongdeungpo-gu');
-            console.log(dobonggu);
+            // var clickpath = states.selectAll('path');
 
-            dobonggu.on('click', (e) => {
-                console.log('저 도봉구인데 왜 눌려요!');
+            /*
+            노가다 데이터 받아오기 연습
+            */
+            var gangbukgu =states.select('#path-Gangbuk-gu');
+            var dobonggu = states.select('#path-Dobong-gu');
+            var yeongdeungpogu = states.select('#path-Yeongdeungpo-gu');
+            var nowongu = states.select('#path-Nowon-gu');
+            var eunpyeonggu = states.select('#path-Eunpyeong-gu');
+            var seongbukgu = states.select('#path-Seongbuk-gu');
+            var jungnanggu = states.select('#path-Jungnang-gu');
+            var jongnogu = states.select('#path-Jongno-gu');
+            var dongdaemungu = states.select('#path-Dongdaemun-gu');
+            var seodaemungu = states.select('#path-Seodaemun-gu');
+            var junggu = states.select('#path-Jung-gu');
+            var mapogu = states.select('#path-Mapo-gu');
+            var yongsangu = states.select('#path-Yongsan-gu');
+            var seongdonggu = states.select('#path-Seongdong-gu');
+            var gwangjingu = states.select('#path-Gwangjin-gu');
+
+            
+            var tempArray = [dobonggu, yeongdeungpogu, gangbukgu, nowongu, eunpyeonggu, jongnogu, seongbukgu, jungnanggu, seodaemungu, dongdaemungu, mapogu, junggu, seongdonggu, gwangjingu, yongsangu];
+            
+
+            tempArray[0].on('click', (e) => { 
+                console.log('저 '+e.properties.SIG_KOR_NM+'인데 왜 눌려요!');
+                tempArray.map((e) => {
+                    e.attr('class', 'no-selected');
+                })
                 dobonggu.attr('class', 'selected');
             })
-            yeongdeungpogu.on('click', (e) => {
-                console.log('저 영등포구인데 ㅎㅇ');
+            tempArray[1].on('click', (e) => { 
+                console.log('저 '+e.properties.SIG_KOR_NM+'인데 왜 눌려요!, 뚜뚜 사는 곳');
+                tempArray.map((e) => {
+                    e.attr('class', 'no-selected');
+                })
                 yeongdeungpogu.attr('class', 'selected');
             })
+            tempArray[2].on('click', (e) => { 
+                console.log('저 '+e.properties.SIG_KOR_NM+'인데 왜 눌려요!');
+                tempArray.map((e) => {
+                    e.attr('class', 'no-selected');
+                })
+                gangbukgu.attr('class', 'selected');
+            })
+            tempArray[3].on('click', (e) => { 
+                console.log('저 '+e.properties.SIG_KOR_NM+'인데 왜 눌려요!');
+                tempArray.map((e) => {
+                    e.attr('class', 'no-selected');
+                })
+                nowongu.attr('class', 'selected');
+            })
+            tempArray[4].on('click', (e) => { 
+                console.log('저 '+e.properties.SIG_KOR_NM+'인데 왜 눌려요!');
+                tempArray.map((e) => {
+                    e.attr('class', 'no-selected');
+                })
+                eunpyeonggu.attr('class', 'selected');
+            })
+            // dobonggu.on('click', (e) => { // tempArray[0].on
+            //     console.log('저 도봉구인데 왜 눌려요!');
+            //     tempArray.map((e) => {
+            //         e.attr('class', 'no-selected');
+            //     })
+            //     dobonggu.attr('class', 'selected');
+            //     // yeongdeungpogu.attr.m('class', 'no-selected');
+            // })
+            
+
 
             // clickpath.on('click', (e) => {
             //     console.log(e.properties.SIG_KOR_NM + '로 이동');
@@ -94,7 +150,7 @@ function drawMap(target) {
             // clickpath.addEventListener('click', (e) => {
             //     console.log(clickpath);
             // })
-            console.log(clickpath);
+            // console.log(clickpath);
 
         labels = states
             .selectAll('text')
